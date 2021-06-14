@@ -1,30 +1,6 @@
 import os
 import json
 
-# player      the player name
-# atr         the default attributes
-# logo        displays the logo
-# setAtr      logic to set the attributes, taking a string and a number and put it to the dictionary
-# readAtr     returns the atr by getting a string and reading from the atr dict
-
-player = 'default'
-
-atr = {
-    'hpt': 0,
-    'atk': 0,
-    'def': 0,
-    'str': 0,
-    'wgt': 0,
-    'mov': 0,
-}
-
-def print_logo():
-    print(
-    '''
-CYOA ENGINE
-Welcome: {name}
-    '''.format(name=player))
-
 path = os.getcwd() + '\\database\\'
 
 # CRUD
