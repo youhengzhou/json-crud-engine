@@ -1,7 +1,5 @@
 import random
 from engine import engine
-from engine.char import char
-from engine.locale import locale
 
 # engine.py stores the create, read, update and delete logic of the game
 
