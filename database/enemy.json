@@ -1,0 +1,17 @@
+{
+    "name": "Larry Howell",
+    "age": "senior",
+    "nation": "manticolo-islands",
+    "hair-color": "grey",
+    "hair-style": "dreadlocks",
+    "height": "very-tall (190-200+)",
+    "physique": "thin",
+    "combat-experience": "trained",
+    "enemy-type": "guard",
+    "health": 2,
+    "strength": 3,
+    "endurance": 5,
+    "dexterity": 4,
+    "movement": 2,
+    "money": 2
+}
