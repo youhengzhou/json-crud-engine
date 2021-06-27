@@ -27,7 +27,7 @@ def random_num(number):
 
 # CRUPD
 def create(dictionary_name):
-    blank_dictionary = []
+    blank_dictionary = {}
     with open(path + dictionary_name + '.json', 'w') as outfile:
         json.dump(blank_dictionary, outfile, indent=4)
 
