@@ -119,6 +119,10 @@ def run():
         if sel.isnumeric():
             print(random_num(sel))
 
+        # checking for no inputs
+        elif sel == '':
+            print('')
+
         # edit the path of the database
         elif sel[0:4] == 'path': # from 0 to the 4th place that is the space to pick 0 to 3
             str = sel[5:] # the 5th place is where the word starts
@@ -137,10 +141,6 @@ def run():
         # prints memory
         elif sel == 'pm':
             print(mem)
-
-        # checking for no inputs before sel[0]
-        elif sel == '':
-            print('')
 
         # CRUD - str being the name of the database file
         # create json
