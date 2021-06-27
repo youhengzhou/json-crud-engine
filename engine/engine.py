@@ -109,7 +109,7 @@ def run():
 
         # generates a random number from 1 up to that number
         if sel.isnumeric():
-            print(random_num())
+            print(random_num(sel))
 
         # edit the path of the database
         elif sel[0:4] == 'path': # from 0 to the 4th place that is the space to pick 0 to 3
