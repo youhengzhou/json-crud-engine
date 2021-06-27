@@ -6,7 +6,7 @@ available commands:
 
 type any integer number to generate a random integer number up to that point
 
-type path to set the database path
+type `path` followed by a string for the path to set the path to the database folder
 
 type `c` followed by a string to generate an empty database with that name
 
