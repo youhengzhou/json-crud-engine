@@ -78,7 +78,7 @@ def tally_atr(dictionary):
     print('t')
     count = 0
     for value in dictionary.values():
-        count = count + int(value)
+        count = count + float(value)
     return(count)
 
 # CYOA
