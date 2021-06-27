@@ -53,7 +53,7 @@ def delete(dictionary_name):
     else:
         print('The selected file does not exist')
 
-# IEO
+# IEOT
 def input_atr(dictionary, string):
     for i in range(len(string)):
             if string[i] == " ":
@@ -73,6 +73,13 @@ def output_atr(dictionary, string):
     print('o '+ string)
     print('o ' + dictionary[string])
     return(dictionary[string])
+
+def tally_atr(dictionary):
+    print('t')
+    count = 0
+    for value in dictionary.values():
+        count = count + int(value)
+    return(count)
 
 # CYOA
 # on an engine level, create a copy of the dictionary as the dict_template
@@ -176,5 +183,9 @@ def run():
         elif sel[0] == 'o':
             str = sel[2:]
             output_atr(mem,str)
+
+        # tally up all the values
+        elif sel[0] == 't':
+            print(tally_atr(mem))
     
     print('exit')
