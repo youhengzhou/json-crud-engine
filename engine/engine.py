@@ -53,26 +53,44 @@ def delete(dictionary_name):
     else:
         print('The selected file does not exist')
 
-# IEOT
-def input_atr(dictionary, string):
+# local CRUPD
+def local_create(dictionary, string):
+    dictionary = {}
     for i in range(len(string)):
             if string[i] == " ":
                 word1=string[:i]
                 word2=string[i+1:]
-                print('i ' + word1)
-                print('i ' + word2)
+                print('lc ' + word1)
+                print('lc ' + word2)
                 dictionary[word1] = word2
                 return(dictionary)
 
-def erase_atr(dictionary, string):
-    print('e ' + string)
-    print('e ' + dictionary.pop(string,'atr_not_found'))
-    return(dictionary)
+def local_retrieve(dictionary, *args):
+    if args == null:
+        local_retrieve
 
-def output_atr(dictionary, string):
-    print('o '+ string)
-    print('o ' + dictionary[string])
+def local_retrieve(dictionary, string):
+    if string == None:
+        print('lr ' + dictionary[string])
+        return(dictionary)
+    print('lr '+ string)
+    print('lr ' + dictionary[string])
     return(dictionary[string])
+
+def local_update(dictionary, string):
+    for i in range(len(string)):
+            if string[i] == " ":
+                word1=string[:i]
+                word2=string[i+1:]
+                print('lc ' + word1)
+                print('lc ' + word2)
+                dictionary[word1] = word2
+                return(dictionary)
+
+def local_delete(dictionary, string):
+    print('ld ' + string)
+    print('ld ' + dictionary.pop(string,'atr_not_found'))
+    return(dictionary)
 
 def tally_atr(dictionary):
     print('t')
@@ -142,7 +160,7 @@ def run():
         elif sel == 'pm':
             print(mem)
 
-        # CRUD - str being the name of the database file
+        # CRUPD - str being the name of the database file
         # create json
         elif sel[0] == 'c':
             str = sel[2:]
@@ -167,22 +185,27 @@ def run():
         elif sel[0] == 'd':
             str = sel[2:]
             delete(str)
-
-        # gm commands - str being the atr name
-        # insert dictionary key value pair to memory
-        elif sel[0] == 'i':
-            str = sel[2:]
-            mem=input_atr(mem,str)
-
-        # erase dictionary key value pair from memory
-        elif sel[0] == 'e':
-            str = sel[2:]
-            mem=erase_atr(mem,str)
+        
+        # local CRUD - str being the key value pair to insert
+        # create a new dictionary with key value pair to memory
+        elif sel[:2] == 'lc':
+            str = sel[3:]
+            mem=local_create(mem,str)
 
         # output dictionary value from key
-        elif sel[0] == 'o':
-            str = sel[2:]
-            output_atr(mem,str)
+        elif sel[:2] == 'lr':
+            str = sel[3:]
+            local_retrieve(mem,str)
+
+        # insert dictionary key value pair to memory
+        elif sel[:2] == 'lu':
+            str = sel[3:]
+            mem=local_update(mem,str)
+
+        # erase dictionary key value pair from memory
+        elif sel[:2] == 'ld':
+            str = sel[3:]
+            mem=local_delete(mem,str)
 
         # tally up all the values
         elif sel[0] == 't':
