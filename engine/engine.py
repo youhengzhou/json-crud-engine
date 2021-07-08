@@ -65,17 +65,16 @@ def local_create(dictionary, string):
                 dictionary[word1] = word2
                 return(dictionary)
 
-def local_retrieve(dictionary, *args):
-    if args == null:
-        local_retrieve
-
-def local_retrieve(dictionary, string):
-    if string == None:
-        print('lr ' + dictionary[string])
+def local_retrieve(dictionary, *arg):
+    string=''
+    if arg == None:
+        print('lr ' + dictionary)
         return(dictionary)
-    print('lr '+ string)
-    print('lr ' + dictionary[string])
-    return(dictionary[string])
+    else:
+        string=arg
+        print('lr '+ string)
+        print('lr ' + dictionary[string])
+        return(dictionary[string])
 
 def local_update(dictionary, string):
     for i in range(len(string)):
@@ -195,6 +194,8 @@ def run():
         # output dictionary value from key
         elif sel[:2] == 'lr':
             str = sel[3:]
+            if str == None:
+                str = None
             local_retrieve(mem,str)
 
         # insert dictionary key value pair to memory
