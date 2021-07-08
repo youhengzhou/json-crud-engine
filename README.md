@@ -18,8 +18,10 @@ type `p` followed by a string to patch the dictionary in the database with the e
 
 type `d` followed by a string to delete the dictionary with that name
 
-type `i` followed with a key value pair to insert a key value pair
+type `lc` followed with a key value pair to initialize the new local memory
 
-type `e` followed with a key to remove that key value pair
+type `lr` followed with no other commands to retrieve the dictionary or a key to retrieve that key value pair
 
-type `o` followed with a key to remove that key value pair
+type `lu` followed with a key value pair to insert into the local memory
+
+type `ld` followed with a key to remove that key value pair
