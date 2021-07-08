@@ -121,7 +121,7 @@ def fname():
 
 # runner of engine.py which stores the create, read, update, patch and delete logic
 # CRUPD offers create, retrieve, update, patch, delete
-# IEO offers input, erase, output
+# L CRUD offers create, retrieve, update, patch, delete on a local memory level
 def run():
     games=['sp']
     mem={} 
