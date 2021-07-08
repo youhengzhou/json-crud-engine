@@ -65,13 +65,11 @@ def local_create(dictionary, string):
                 dictionary[word1] = word2
                 return(dictionary)
 
-def local_retrieve(dictionary, *arg):
-    string=''
-    if arg == None:
-        print('lr ' + dictionary)
+def local_retrieve(dictionary, string=''):
+    if string=='':
+        print('lr ' + str(dictionary))
         return(dictionary)
     else:
-        string=arg
         print('lr '+ string)
         print('lr ' + dictionary[string])
         return(dictionary[string])
@@ -129,7 +127,11 @@ def run():
     mem={} 
     sel = ''
     while (sel != 'q' and 'quit' and 'exit'):
+
+        # prints the local memory
         print(mem)
+
+        # get the local selection
         sel = input('\ninput selection: ')
 
         # generates a random number from 1 up to that number
