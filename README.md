@@ -1,6 +1,8 @@
 JSON CRUPD engine used for building JSON based databases
 
-to use, type `py v.py` in the terminal
+documentation for main engine `main.py` file WIP
+
+you can try the local engine with the `leng.py` file
 
 available commands:
 
