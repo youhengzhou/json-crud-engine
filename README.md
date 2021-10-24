@@ -6,7 +6,7 @@ documentation for main engine `main.py` file WIP
 
 you can try the local engine with the `leng.py` file
 
-available commands:
+available commands for the local engine:
 
 type any integer number to generate a random integer number up to that point
 
