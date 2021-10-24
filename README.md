@@ -1,5 +1,7 @@
 JSON CRUPD engine used for building JSON based databases
 
+please see https://pypi.org/project/jsonengine/ for the python package
+
 documentation for main engine `main.py` file WIP
 
 you can try the local engine with the `leng.py` file
