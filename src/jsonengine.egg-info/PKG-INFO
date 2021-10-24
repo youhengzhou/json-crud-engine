@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: jsonengine
+Version: 0.0.1
+Summary: A package for a python JSON database CRUD engine
+Home-page: https://github.com/youhengzhou/json-crud-engine
+Author: YouHeng Zhou
+Author-email: youhengzhou@cmail.carleton.ca
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/youhengzhou/json-crud-engine/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# JSON Engine
+
+JSON Database Engine for Python
+
+Written for personal use in projects
+
+Documentation WIP
+
