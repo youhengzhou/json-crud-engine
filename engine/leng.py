@@ -1,5 +1,5 @@
 import random
-from engine import eng
+from engine import main
 
 def random_num(number):
     return(random.randint(1, int(number)))

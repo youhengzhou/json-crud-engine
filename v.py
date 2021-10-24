@@ -1,3 +1,4 @@
-from engine import engine
+from engine import main as eng
+from engine import leng
 
-engine.run()
+leng.run()
