@@ -1,18 +1,11 @@
 # JSON Engine
 
-<<<<<<< HEAD
-JSON Database Engine for Python
-=======
 please see https://pypi.org/project/jsonengine/ for the python package
 
 documentation for main engine `main.py` file WIP
->>>>>>> 92150e35de2e1e6a6ef205498bc30ff9b45fe71d
 
 Written for personal use in projects
 
-<<<<<<< HEAD
-Documentation WIP
-=======
 available commands for the local engine:
 
 type any integer number to generate a random integer number up to that point
@@ -36,4 +29,3 @@ type `lr` followed with no other commands to retrieve the dictionary or a key to
 type `lu` followed with a key value pair to insert into the local memory
 
 type `ld` followed with a key to remove that key value pair
->>>>>>> 92150e35de2e1e6a6ef205498bc30ff9b45fe71d
