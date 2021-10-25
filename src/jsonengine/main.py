@@ -12,7 +12,7 @@ def set_path(string):
     global path
     path = os.getcwd() + string
 
-def didsplay_kv(dictionary, key, value):
+def dictionary_kv(dictionary, key, value):
     dictionary[key] = value
     return dictionary
 
