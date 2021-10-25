@@ -87,7 +87,7 @@ def delete(*args):
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
-        os.remove(path + 'eng.json')
+        os.remove(path + path_string + 'eng.json')
     else:
         print('The selected file does not exist')
 
