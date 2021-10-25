@@ -12,11 +12,11 @@ def set_path(string):
     global path
     path = os.getcwd() + string
 
-def dkv(dictionary, key, value):
+def didsplay_kv(dictionary, key, value):
     dictionary[key] = value
     return dictionary
 
-def c(*args):
+def create(*args):
     blank_dictionary = {}
     path_string = ''
     if (args):
@@ -26,21 +26,21 @@ def c(*args):
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump(blank_dictionary, outfile, indent=4)
 
-def r(*args):
+def retrieve(*args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     with open(path + path_string + 'eng.json', 'r') as f:
         return(json.load(f))
 
-def r_kv(key, *args):
+def retrieve_k(key, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     with open(path + path_string + 'eng.json', 'r') as f:
         return(json.load(f)[key])
 
-def u(dictionary, *args):
+def update(dictionary, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -49,7 +49,7 @@ def u(dictionary, *args):
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump(dictionary, outfile, indent=4)
 
-def u_kv(key, value, *args):
+def update_kv(key, value, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -58,7 +58,7 @@ def u_kv(key, value, *args):
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump({key: value}, outfile, indent=4)
 
-def p(dictionary, *args):
+def patch(dictionary, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -70,7 +70,7 @@ def p(dictionary, *args):
         with open(path + path_string + 'eng.json', 'w') as outfile:
             json.dump(data, outfile, indent=4)
 
-def p_kv(key, value, *args):
+def patch_kv(key, value, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -82,7 +82,7 @@ def p_kv(key, value, *args):
         with open(path + path_string + 'eng.json', 'w') as outfile:
             json.dump(data, outfile, indent=4)
 
-def d(*args):
+def delete(*args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -91,7 +91,7 @@ def d(*args):
     else:
         print('The selected file does not exist')
 
-def d_kv(key, *args):
+def delete_k(key, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -104,7 +104,7 @@ def d_kv(key, *args):
     else:
         print('The selected file does not exist')
 
-def dp(path_string, *args):
+def display(path_string, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -114,7 +114,7 @@ def dp(path_string, *args):
     else:
         print('The selected file does not exist')
 
-def dp_kv(key, *args):
+def display_key(key, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -124,7 +124,7 @@ def dp_kv(key, *args):
     else:
         print('The selected file does not exist')
 
-def dp_nkv(key, *args):
+def display_nkv(key, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -136,7 +136,7 @@ def dp_nkv(key, *args):
     else:
         print('The selected file does not exist')
 
-def dpf(*args):
+def displayfull(*args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -146,7 +146,7 @@ def dpf(*args):
     else:
         print('The selected file does not exist')
 
-def dpf_nkv(key, *args):
+def displayfull_nkv(key, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
