@@ -6,7 +6,7 @@
 import os
 import json
 
-path = os.getcwd() + '\\database\\'
+path = os.getcwd() + '\\json_engine_database\\'
 
 def set_path(string):
     global path
@@ -16,31 +16,7 @@ def dictionary_kv(dictionary, key, value):
     dictionary[key] = value
     return dictionary
 
-def create(*args):
-    blank_dictionary = {}
-    path_string = ''
-    if (args):
-        path_string = str(args[0]) + '\\'
-    if os.path.exists(path + path_string)==False:
-        os.makedirs(path + path_string)
-    with open(path + path_string + 'eng.json', 'w') as outfile:
-        json.dump(blank_dictionary, outfile, indent=4)
-
-def retrieve(*args):
-    path_string = ''
-    if (args):
-        path_string = str(args[0]) + '\\'
-    with open(path + path_string + 'eng.json', 'r') as f:
-        return(json.load(f))
-
-def retrieve_k(key, *args):
-    path_string = ''
-    if (args):
-        path_string = str(args[0]) + '\\'
-    with open(path + path_string + 'eng.json', 'r') as f:
-        return(json.load(f)[key])
-
-def update(dictionary, *args):
+def create(dictionary, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
@@ -49,38 +25,73 @@ def update(dictionary, *args):
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump(dictionary, outfile, indent=4)
 
+def retrieve(*args):
+    path_string = ''
+    if (args):
+        path_string = str(args[0]) + '\\'
+    if os.path.exists(path + path_string)==False:
+        return False
+    with open(path + path_string + 'eng.json', 'r') as f:
+        return(json.load(f))
+
+def retrieve_k(key, *args):
+    path_string = ''
+    if (args):
+        path_string = str(args[0]) + '\\'
+    if os.path.exists(path + path_string)==False:
+        return False
+    with open(path + path_string + 'eng.json', 'r') as f:
+        if key in json.load(f):
+            with open(path + path_string + 'eng.json', 'r') as f:
+                return(json.load(f)[key])
+        else:
+            return False
+
+def update(dictionary, *args):
+    path_string = ''
+    if (args):
+        path_string = str(args[0]) + '\\'
+    if os.path.exists(path + path_string)==False:
+        return False
+    with open(path + path_string + 'eng.json', 'w') as outfile:
+        json.dump(dictionary, outfile, indent=4)
+        return True
+
 def update_kv(key, value, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
-        os.makedirs(path + path_string)
+        return False
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump({key: value}, outfile, indent=4)
+        return True
 
 def patch(dictionary, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
-        os.makedirs(path + path_string)
+        return False
     with open(path + path_string + 'eng.json', 'r') as f:
         data=(json.load(f))
         data.update(dictionary)
         with open(path + path_string + 'eng.json', 'w') as outfile:
             json.dump(data, outfile, indent=4)
+            return True
 
 def patch_kv(key, value, *args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
-        os.makedirs(path + path_string)
+        return False
     with open(path + path_string + 'eng.json', 'r') as f:
         data=(json.load(f))
         data.update({key: value})
         with open(path + path_string + 'eng.json', 'w') as outfile:
             json.dump(data, outfile, indent=4)
+            return True
 
 def delete(*args):
     path_string = ''
@@ -88,8 +99,10 @@ def delete(*args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
         os.remove(path + path_string + 'eng.json')
+        os.remove(path + path_string)
+        return True
     else:
-        print('The selected file does not exist')
+        return False
 
 def delete_k(key, *args):
     path_string = ''
@@ -97,12 +110,16 @@ def delete_k(key, *args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
         with open(path + path_string + 'eng.json', 'r') as f:
-            data=(json.load(f))
-            data.pop(key)
-            with open(path + path_string + 'eng.json', 'w') as outfile:
-                json.dump(data, outfile, indent=4)
+            if key in json.load(f):
+                data = json.load(f)
+                data.pop(key)
+                with open(path + path_string + 'eng.json', 'w') as outfile:
+                    json.dump(data, outfile, indent=4)
+                    return True
+            else:
+                return False
     else:
-        print('The selected file does not exist')
+        return False
 
 def display(*args):
     path_string = ''
@@ -111,8 +128,10 @@ def display(*args):
     if os.path.exists(path + path_string + 'eng.json'):
         with open(path + path_string + 'eng.json', 'r') as f:
             print(json.load(f))
+            return True
     else:
         print('The selected file does not exist')
+        return False
 
 def display_key(key, *args):
     path_string = ''
@@ -120,9 +139,12 @@ def display_key(key, *args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
         with open(path + path_string + 'eng.json', 'r') as f:
-            print(key + ' ' + str(json.load(f)[key]))
+            if key in json.load(f):
+                print(key + ' ' + str(json.load(f)[key]))
+                return True
     else:
         print('The selected file does not exist')
+        return False
 
 def display_nkv(key, *args):
     path_string = ''
@@ -130,11 +152,14 @@ def display_nkv(key, *args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
         with open(path + path_string + 'eng.json', 'r') as f:
-            data = json.load(f)
-            data.pop(key,'key not found')
-            print(data)
+            if key in json.load(f):
+                data = json.load(f)
+                data.pop(key,'key not found')
+                print(data)
+                return True
     else:
         print('The selected file does not exist')
+        return False
 
 def displayfull(*args):
     path_string = ''
