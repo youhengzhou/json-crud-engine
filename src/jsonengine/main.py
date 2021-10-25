@@ -104,7 +104,7 @@ def delete_k(key, *args):
     else:
         print('The selected file does not exist')
 
-def display(path_string, *args):
+def display(*args):
     path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
