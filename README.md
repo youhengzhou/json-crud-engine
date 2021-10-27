@@ -4,6 +4,16 @@ please see https://pypi.org/project/jsonengine/ for the python package
 
 documentation for main engine `main.py` file WIP
 
+Create command:
+
+Retrieve command:
+
+Update command:
+
+Patch command:
+
+Delete command:
+
 Written for personal use in projects
 
 available commands for the local engine:
