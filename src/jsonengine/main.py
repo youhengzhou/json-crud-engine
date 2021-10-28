@@ -99,7 +99,7 @@ def delete(*args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
         os.remove(path + path_string + 'eng.json')
-        os.remove(path + path_string)
+        os.rmdir(path + path_string)
         return True
     else:
         return False
