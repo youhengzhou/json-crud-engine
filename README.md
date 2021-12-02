@@ -4,38 +4,49 @@ please see https://pypi.org/project/jsonengine/ for the python package
 
 documentation for main engine `main.py` file WIP
 
+# Import
+
+`py -m pip install jsonengine -U`
+
+## In Your Python Files
+
+`import jsonengine.main as eng`
+
+# Commands
+
 Create command:
+`eng.create(dictionary, path)`
+This will create a JSON dictionary in the path
 
 Retrieve command:
+`eng.retrieve(path)`
+This will retrieve the JSON dictionary in the path
 
 Update command:
+`eng.update(dictionary, path)`
+This will update a JSON dictionary in the path
+
+Update in this case means replacing the dictionary in its entirety with a new one
+
+Update (with key value) command:
+`eng.update_kv(key, value, path)`
+This will update a key value pair in the JSON dictionary in the path
+
+Update in this case means replacing the dictionary with the key value pair
 
 Patch command:
+`eng.patch(dictionary, path)`
+This will patch a JSON dictionary in the path
+
+Patch in this case means keeping the JSON dictionary in the path and appending to the dictionary
+
+Patch (with key value) command:
+`eng.patch_kv(dictionary, path)`
+This will patch a key value pair in the JSON dictionary in the path
+
+Patch in this case means keeping the dictionary and appending the new key value pair
 
 Delete command:
+`eng.create(path)`
 
-Written for personal use in projects
-
-available commands for the local engine:
-
-type any integer number to generate a random integer number up to that point
-
-type `path` followed by a string for the path to set the path to the database folder
-
-type `c` followed by a string to generate an empty database with that name
-
-type `r` followed by a string to retrieve that database into the engine dictionary memory
-
-type `u` followed by a string to update the dictionary in the database with the engine dictionary memory
-
-type `p` followed by a string to patch the dictionary in the database with the engine dictionary memory
-
-type `d` followed by a string to delete the dictionary with that name
-
-type `lc` followed with a key value pair to initialize the new local memory
-
-type `lr` followed with no other commands to retrieve the dictionary or a key to retrieve that key value pair
-
-type `lu` followed with a key value pair to insert into the local memory
-
-type `ld` followed with a key to remove that key value pair
+This will delete the JSON dictionary in the path
