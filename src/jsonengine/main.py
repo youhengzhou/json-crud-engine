@@ -7,6 +7,7 @@ import os
 import json
 
 path = os.getcwd() + '\\json_engine_database\\'
+path_string = ''
 
 def set_path(string):
     global path
@@ -17,7 +18,6 @@ def dictionary_kv(dictionary, key, value):
     return dictionary
 
 def create(dictionary, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
@@ -26,7 +26,6 @@ def create(dictionary, *args):
         json.dump(dictionary, outfile, indent=4)
 
 def retrieve(*args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
@@ -35,7 +34,6 @@ def retrieve(*args):
         return(json.load(f))
 
 def retrieve_k(key, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
@@ -48,7 +46,6 @@ def retrieve_k(key, *args):
             return False
 
 def update(dictionary, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
@@ -58,7 +55,6 @@ def update(dictionary, *args):
         return True
 
 def update_kv(key, value, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
@@ -68,7 +64,6 @@ def update_kv(key, value, *args):
         return True
 
 def patch(dictionary, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
@@ -81,7 +76,6 @@ def patch(dictionary, *args):
             return True
 
 def patch_kv(key, value, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
@@ -94,7 +88,6 @@ def patch_kv(key, value, *args):
             return True
 
 def delete(*args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
@@ -105,7 +98,6 @@ def delete(*args):
         return False
 
 def delete_k(key, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
@@ -122,7 +114,6 @@ def delete_k(key, *args):
         return False
 
 def display(*args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
@@ -134,7 +125,6 @@ def display(*args):
         return False
 
 def display_key(key, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
@@ -147,7 +137,6 @@ def display_key(key, *args):
         return False
 
 def display_nkv(key, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
@@ -162,7 +151,6 @@ def display_nkv(key, *args):
         return False
 
 def displayfull(*args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
@@ -172,7 +160,6 @@ def displayfull(*args):
         print('The selected file does not exist')
 
 def displayfull_nkv(key, *args):
-    path_string = ''
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):

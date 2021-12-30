@@ -1,8 +1,8 @@
 # JSON Engine
 
-please see https://pypi.org/project/jsonengine/ for the python package
+please refer to https://pypi.org/project/jsonengine/ for the python package
 
-documentation for main engine `main.py` file WIP
+and please refer to https://github.com/youhengzhou/json-crud-engine for the repo
 
 # Import
 
