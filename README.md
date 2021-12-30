@@ -47,6 +47,6 @@ This will patch a key value pair in the JSON dictionary in the path
 Patch in this case means keeping the dictionary and appending the new key value pair
 
 ## Delete command:
-`eng.create(path)`
+`eng.delete(path)`
 
 This will delete the JSON dictionary in the path
