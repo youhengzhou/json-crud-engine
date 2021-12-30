@@ -151,7 +151,7 @@ def display_nkv(key, *args):
         print('The selected file does not exist')
         return False
 
-def displayfull(*args):
+def display_ind(*args):
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
@@ -160,7 +160,7 @@ def displayfull(*args):
     else:
         print('The selected file does not exist')
 
-def displayfull_nkv(key, *args):
+def display_ind_nkv(key, *args):
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string + 'eng.json'):
