@@ -17,26 +17,31 @@ def dictionary_kv(dictionary, key, value):
     dictionary[key] = value
     return dictionary
 
-def create(dictionary, *args):
+def set_path_string(args,create_flag):
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
-        os.makedirs(path + path_string)
+        if create_flag == True:
+            os.makedirs(path + path_string)
+        else:
+            return False
+    return path_string
+
+def create(dictionary, *args):
+    path_string = set_path_string(args,True)
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump(dictionary, outfile, indent=4)
 
 def retrieve(*args):
-    if (args):
-        path_string = str(args[0]) + '\\'
-    if os.path.exists(path + path_string)==False:
+    path_string = set_path_string(args,False)
+    if path_string == False:
         return False
     with open(path + path_string + 'eng.json', 'r') as f:
         return(json.load(f))
 
 def retrieve_k(key, *args):
-    if (args):
-        path_string = str(args[0]) + '\\'
-    if os.path.exists(path + path_string)==False:
+    path_string = set_path_string(args,False)
+    if path_string == False:
         return False
     with open(path + path_string + 'eng.json', 'r') as f:
         if key in json.load(f):
@@ -46,27 +51,24 @@ def retrieve_k(key, *args):
             return False
 
 def update(dictionary, *args):
-    if (args):
-        path_string = str(args[0]) + '\\'
-    if os.path.exists(path + path_string)==False:
+    path_string = set_path_string(args,False)
+    if path_string == False:
         return False
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump(dictionary, outfile, indent=4)
         return True
 
 def update_kv(key, value, *args):
-    if (args):
-        path_string = str(args[0]) + '\\'
-    if os.path.exists(path + path_string)==False:
+    path_string = set_path_string(args,False)
+    if path_string == False:
         return False
     with open(path + path_string + 'eng.json', 'w') as outfile:
         json.dump({key: value}, outfile, indent=4)
         return True
 
 def patch(dictionary, *args):
-    if (args):
-        path_string = str(args[0]) + '\\'
-    if os.path.exists(path + path_string)==False:
+    path_string = set_path_string(args,False)
+    if path_string == False:
         return False
     with open(path + path_string + 'eng.json', 'r') as f:
         data=(json.load(f))
@@ -76,9 +78,8 @@ def patch(dictionary, *args):
             return True
 
 def patch_kv(key, value, *args):
-    if (args):
-        path_string = str(args[0]) + '\\'
-    if os.path.exists(path + path_string)==False:
+    path_string = set_path_string(args,False)
+    if path_string == False:
         return False
     with open(path + path_string + 'eng.json', 'r') as f:
         data=(json.load(f))

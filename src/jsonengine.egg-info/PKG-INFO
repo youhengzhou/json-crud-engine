@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: jsonengine
-Version: 0.0.4
+Version: 1.0.0
 Summary: A package for a python JSON database CRUD engine
 Home-page: https://github.com/youhengzhou/json-crud-engine
 Author: YouHeng Zhou
@@ -21,7 +21,7 @@ please refer to https://pypi.org/project/jsonengine/ for the python package
 
 and please refer to https://github.com/youhengzhou/json-crud-engine for the repo
 
-# Import
+# Download Package
 
 `py -m pip install jsonengine -U`
 
