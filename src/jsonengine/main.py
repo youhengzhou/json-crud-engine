@@ -18,6 +18,7 @@ def dictionary_kv(dictionary, key, value):
     return dictionary
 
 def set_path_string(args,create_flag):
+    global path_string
     if (args):
         path_string = str(args[0]) + '\\'
     if os.path.exists(path + path_string)==False:
