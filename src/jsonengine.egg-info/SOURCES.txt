@@ -3,7 +3,6 @@ README.md
 pyproject.toml
 setup.cfg
 src/jsonengine/__init__.py
-src/jsonengine/main.py
 src/jsonengine.egg-info/PKG-INFO
 src/jsonengine.egg-info/SOURCES.txt
 src/jsonengine.egg-info/dependency_links.txt
